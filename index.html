@@ -160,6 +160,14 @@ p:last-child { margin-bottom: 0; }
 .foot { text-align: left; }
 .foot h2 { margin-bottom: 14px; }
 .foot .figure { margin: 0 0 32px; }
+.tauben { position: fixed; inset: 0; pointer-events: none; z-index: 50; overflow: hidden; }
+.taube { position: absolute; left: 0; top: 0; width: 64px; height: 40px; will-change: transform, opacity; filter: drop-shadow(0 1px 3px rgba(60,40,20,.38)); }
+.taube svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.taube .fl { fill: #fffdf8; transform-origin: 34px 21px; animation: flap .32s ease-in-out infinite alternate; }
+.taube .bd { fill: #fffdf8; }
+@keyframes flap { from { transform: scaleY(1); } to { transform: scaleY(-.45); } }
+@media (prefers-reduced-motion: reduce) { .tauben { display: none; } }
+
 .small { font-size: 14px; color: var(--muted); }
 .small a { text-underline-offset: 3px; }
 
@@ -324,12 +332,63 @@ p:last-child { margin-bottom: 0; }
 
 <footer class="band alt">
   <div class="inner foot">
-    <figure class="figure"><img src="assets/img/footer-paar-aperitif.jpg" alt="Verena und Christoph lachen sich an, mit einem Glas Aperitif in der Hand" width="688" height="914" loading="lazy"></figure>
+    <figure class="figure" id="taubenbild"><img src="assets/img/footer-paar-aperitif.jpg" alt="Verena und Christoph lachen sich an, mit einem Glas Aperitif in der Hand" width="688" height="914" loading="lazy"></figure>
     <p class="label">Bis bald</p>
     <h2>Wir sehen uns bald</h2>
     <p>Wir freuen uns darauf, euch die Einladung persönlich zu überreichen. Und wenn ihr euch vorstellen könnt, mit uns im Hochzeiger Haus zu übernachten, freuen wir uns über eine kurze Rückmeldung dazu.</p>
     <p style="margin-top:20px"><strong>Christoph &amp; Verena</strong></p>
   </div>
 </footer>
+
+<div class="tauben" id="tauben" aria-hidden="true"></div>
+<script>
+(function () {
+  var fig = document.getElementById('taubenbild'), layer = document.getElementById('tauben');
+  if (!fig || !layer || !fig.animate) return;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  var SVG = '<svg viewBox="0 0 64 40"><path class="fl" d="M24 21C21 11 26 2 39 0C36 8 38 15 44 21Z"/><path class="bd" d="M3 25L16 21C25 18 35 18 43 21C45 16 50 14 54 16L62 18L54 21C52 25 45 28 37 29C25 30 12 29 3 25Z"/><path class="fl" d="M22 23C19 31 24 38 37 40C34 33 36 27 42 23Z" style="transform-origin:34px 23px"/></svg>';
+  var last = 0, running = 0;
+  function release() {
+    var now = Date.now();
+    if (now - last < 1800 || running > 0) return;
+    last = now;
+    var r = fig.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    var n = 16, far = Math.max(innerWidth, innerHeight) * 0.9;
+    for (var i = 0; i < n; i++) {
+      (function (i) {
+        var ang = (i / n) * Math.PI * 2 + (Math.random() - .5) * .5;
+        var dist = far * (.55 + Math.random() * .6);
+        var dx = Math.cos(ang) * dist, dy = Math.sin(ang) * dist;
+        var sx = cx + (Math.random() - .5) * r.width * .5, sy = cy + (Math.random() - .5) * r.height * .4;
+        var left = dx < 0, rot = Math.atan2(dy, left ? -dx : dx) * 180 / Math.PI;
+        var flip = left ? ' scaleX(-1)' : '';
+        var s = .6 + Math.random() * .7;
+        var el = document.createElement('div');
+        el.className = 'taube';
+        el.innerHTML = SVG;
+        var fls = el.querySelectorAll('.fl');
+        for (var k = 0; k < fls.length; k++) fls[k].style.animationDuration = (.22 + Math.random() * .16) + 's';
+        layer.appendChild(el);
+        running++;
+        var dur = 2200 + Math.random() * 1800, delay = Math.random() * 350;
+        var base = 'translate(' + (sx - 32) + 'px,' + (sy - 20) + 'px) ';
+        var a = el.animate([
+          { transform: base + 'translate(0,0) rotate(' + rot + 'deg)' + flip + ' scale(.3)', opacity: 0 },
+          { transform: base + 'translate(' + dx * .12 + 'px,' + dy * .12 + 'px) rotate(' + rot + 'deg)' + flip + ' scale(' + s * .8 + ')', opacity: 1, offset: .1 },
+          { transform: base + 'translate(' + dx + 'px,' + dy + 'px) rotate(' + rot + 'deg)' + flip + ' scale(' + s * 1.25 + ')', opacity: 0 }
+        ], { duration: dur, delay: delay, easing: 'cubic-bezier(.25,.6,.35,1)', fill: 'both' });
+        a.onfinish = function () { el.remove(); running--; };
+      })(i);
+    }
+  }
+  fig.addEventListener('mouseenter', release);
+  fig.addEventListener('touchstart', release, { passive: true });
+  fig.addEventListener('touchmove', release, { passive: true });
+  fig.addEventListener('click', release);
+})();
+</script>
 </body>
 </html>

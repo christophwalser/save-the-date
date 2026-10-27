@@ -6,7 +6,7 @@ Veröffentlicht über GitHub Pages: <https://christophwalser.github.io/save-the-
 
 ## Aufbau
 
-- `index.html`: die komplette Seite, reines HTML und CSS ohne JavaScript
+- `index.html`: die komplette Seite, HTML und CSS plus ein kleines Skript für die Tauben-Animation (Foto am Seitenende berühren oder anklicken)
 - `assets/img/`: Fotos
 - `assets/fonts/`: Schriften (Playfair Display, Hanken Grotesk, SIL OFL 1.1), lokal eingebunden, es gibt keine Anfragen an Google
 - `.nojekyll`: GitHub Pages liefert die Dateien unverändert aus
