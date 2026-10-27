@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hochzeit Christoph &amp; Verena</title>
+<meta name="description" content="Save the Date: Christoph und Verena feiern kirchliche Hochzeit in Imst und danach im Hochzeiger Haus im Pitztal.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:title" content="Save the Date: Christoph &amp; Verena, 9. Oktober 2027">
+<meta property="og:description" content="Kirchliche Hochzeit in Imst, gefeiert wird im Hochzeiger Haus im Pitztal.">
+<meta property="og:url" content="https://christophwalser.github.io/save-the-date/">
+<meta property="og:image" content="https://christophwalser.github.io/save-the-date/assets/img/hero-wiese-traubogen.jpg">
+<meta property="og:image:alt" content="Panoramawiese vor dem Hochzeiger Haus mit Traubogen und LOVE-Schriftzug">
+<style>
+/* Schriften lokal eingebunden (SIL OFL 1.1, Fontsource), keine Anfragen an Google */
+@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/hanken-grotesk-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/hanken-grotesk-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/playfair-display-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 400; font-display: swap; src: url("assets/fonts/playfair-display-latin-400-italic.woff2") format("woff2"); }
+
+/* Layout: Foto-Hero, danach ein ruhiger, einspaltiger Aufstieg von Imst (828 m) auf 1.900 m. Helle Leinenflächen wechseln mit einem dunklen Kerzenlicht-Abschnitt für die Nacht. Farben aus der Herbstdeko: Rostrot, Bernstein, Kastanienbraun, Eukalyptus. */
+:root {
+  --bg: #eadecd;
+  --surface: #dac8b1;
+  --ink: #3a2213;
+  --muted: #5c4535;
+  --line: #bda78d;
+  --accent: #7b1e2e;
+  --accent-fill: #a9672a;
+  --leaf: #5f6b4a;
+  --on-photo: #fcebc8;
+  --night: #7a5a43;
+  --night-ink: #fbeed2;
+  --night-muted: #efe0c6;
+  --night-line: #9b7b62;
+  --night-accent: #ffdf9e;
+  --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.inner {
+  width: 100%;
+  max-width: 680px;
+  margin-inline: auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+/* Eine Lesespalte: Text, Bilder und Listen teilen sich dieselbe Breite */
+.inner > * { max-width: 36rem; }
+.band { padding-block: 56px; }
+.band.alt { background: var(--surface); }
+.band.night {
+  background: var(--night); color: var(--night-ink);
+  --muted: var(--night-muted); --line: var(--night-line); --accent: var(--night-accent); --bg: var(--night);
+}
+
+.label {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; margin: 0; text-wrap: balance; }
+h1, h2 { font-style: italic; letter-spacing: 0.005em; }
+h2 { font-size: clamp(1.75rem, 6.4vw, 2.35rem); line-height: 1.2; margin-bottom: 18px; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+.ph { background: color-mix(in srgb, var(--accent-fill) 35%, transparent); padding: 0 .25em; border-radius: 3px; }
+
+/* Hero */
+.hero { position: relative; color: var(--on-photo); background: #6b523f; isolation: isolate; }
+.hero > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 62% 40%; z-index: -2;
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to bottom, rgba(62,44,30,.38) 0%, rgba(62,44,30,.04) 32%, rgba(62,44,30,.70) 100%);
+}
+.hero .inner { min-height: 560px; display: flex; flex-direction: column; justify-content: space-between; padding-block: 28px 36px; }
+.hero .label { color: var(--on-photo); margin: 0; opacity: .94; }
+.hero .std { margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(2.4rem, 11vw, 3.6rem); line-height: 1.05; color: var(--on-photo); text-shadow: 0 2px 24px rgba(30,16,8,.4); }
+.hero .std::after { content: ""; display: block; width: 56px; height: 2px; margin-top: 14px; background: var(--on-photo); opacity: .8; }
+.hero .note { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid rgba(252,235,200,.45); font-size: 1rem; line-height: 1.5; max-width: 36ch; }
+.hero .note strong { font-weight: 600; }
+.hero h1 { font-size: clamp(3rem, 15vw, 5.4rem); line-height: .98; margin-bottom: 18px; text-shadow: 0 2px 24px rgba(30,16,8,.4); }
+.hero h1 span { display: block; }
+.hero .meta { margin: 0; font-size: 1.05rem; line-height: 1.5; max-width: 34ch; }
+.hero .meta strong { font-weight: 600; letter-spacing: .02em; }
+
+/* Wir zwei */
+.figure { margin: 28px 0 0; border-radius: 4px; overflow: hidden; background: var(--surface); }
+.figure img { width: 100%; height: auto; }
+.mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+.mosaic figure { position: relative; margin: 0; border-radius: 4px; overflow: hidden; background: var(--surface); min-height: 96px; }
+.mosaic figure.big { grid-row: 1 / 3; aspect-ratio: 3 / 4; }
+.mosaic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Ort */
+.photo { border-radius: 4px; overflow: hidden; margin-top: 28px; }
+.photo img { width: 100%; height: auto; }
+.facts { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.facts li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.facts b { font-weight: 600; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); padding-top: 3px; }
+.facts span { min-width: 0; }
+
+/* Aufstieg */
+.ascent { list-style: none; margin: 32px 0 0; padding: 0; position: relative; }
+.ascent::before { content: ""; position: absolute; left: 4.5rem; top: 8px; bottom: 8px; width: 1.5px; background: var(--line); }
+.ascent li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0; position: relative; padding-bottom: 28px; }
+.ascent li:last-child { padding-bottom: 0; }
+.ascent .alt-m { font-size: 13px; font-weight: 600; letter-spacing: .04em; color: var(--accent); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.ascent li > div { padding-left: 24px; position: relative; min-width: 0; }
+.ascent li > div::before { content: ""; position: absolute; left: -5px; top: 9px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent-fill); box-shadow: 0 0 0 4px var(--bg); }
+.ascent h3 { font-size: 1.22rem; line-height: 1.25; margin-bottom: 4px; }
+.ascent p { color: var(--muted); font-size: 16px; margin: 0; }
+
+/* Gut zu wissen */
+.btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.btn {
+  display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px;
+  border: 1.5px solid var(--ink); border-radius: 999px; text-decoration: none;
+  font-weight: 600; font-size: 15px; color: var(--ink); background: transparent;
+}
+.btn:hover { background: var(--ink); color: var(--bg); }
+
+/* Impressionen */
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.duo figure { margin: 0; border-radius: 4px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--surface); }
+.duo img { width: 100%; height: 100%; object-fit: cover; }
+.duo + .duo { margin-top: 10px; }
+.karte { margin: 24px 0 0; }
+.karte img { width: 100%; max-width: 440px; height: auto; mix-blend-mode: multiply; }
+.karte figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+.gallery figure { margin: 0; border-radius: 4px; overflow: hidden; aspect-ratio: 1 / 1; }
+.gallery figure.wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.gallery figure.tall { grid-row: span 2; aspect-ratio: auto; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; }
+
+.foot { text-align: left; }
+.foot h2 { margin-bottom: 14px; }
+.foot .figure { margin: 0 0 32px; }
+.small { font-size: 14px; color: var(--muted); }
+.small a { text-underline-offset: 3px; }
+
+@media (min-width: 720px) {
+  body { font-size: 18px; }
+  .band { padding-block: 80px; }
+  .hero .inner { min-height: 640px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="assets/img/hero-wiese-traubogen.jpg" alt="Panoramawiese vor dem Hochzeiger Haus mit Traubogen und LOVE-Schriftzug, dahinter die Berge des Pitztals" width="1400" height="776">
+  <div class="inner">
+    <p class="std">Save the Date</p>
+    <div>
+      <h1><span>Christoph</span><span>&amp; Verena</span></h1>
+      <p class="meta"><strong>Samstag, 9. Oktober 2027</strong><br>Kirchliche Hochzeit in Imst.<br>Gefeiert wird im Hochzeiger Haus im Pitztal.</p>
+    </div>
+  </div>
+</header>
+
+<section class="band">
+  <div class="inner">
+    <p class="label">Unsere Hochzeit</p>
+    <h2>Jetzt feiern wir mit euch</h2>
+    <p>Im August 2026 haben wir standesamtlich geheiratet. Jetzt folgt die kirchliche Trauung – und das möchten wir ausgiebig mit euch feiern!</p>
+    <p>Auf dieser Website findet ihr vorab einen ersten Überblick über den Ort und den groben Tagesablauf.</p>
+    <p>Bitte merkt euch diesen Termin schon fest im Kalender vor. Die Einladung zur Hochzeit folgt noch!</p>
+    <div class="mosaic">
+      <figure class="big"><img src="assets/img/paar-rosen.jpg" alt="Christoph und Verena vor einer Steinmauer mit rosa Kletterrosen, einander zugewandt" width="688" height="914" loading="lazy"></figure>
+      <figure><img src="assets/img/trauung-haende.jpg" alt="Verena und Christoph halten sich bei der Trauung an den Händen" style="object-position:50% 80%" width="543" height="543" loading="lazy"></figure>
+      <figure><img src="assets/img/eheringe.jpg" alt="Zwei Eheringe auf einem Zinnteller" style="object-position:50% 55%" width="542" height="543" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="inner">
+    <p class="label">Der Tag</p>
+    <h2>Von Imst hinauf in die Bergwelt</h2>
+    <p>So stellen wir uns den Tag ungefähr vor. Der genaue Ablauf folgt mit der Einladung.</p>
+    <ol class="ascent">
+      <li>
+        <span class="alt-m">10:00</span>
+        <div>
+          <h3>Kirchliche Trauung in Imst</h3>
+          <p>Danach fahren wir gemeinsam ins Pitztal.</p>
+        </div>
+      </li>
+      <li>
+        <span class="alt-m">ab 14:00</span>
+        <div>
+          <h3>Empfang am Hochzeiger Haus</h3>
+          <p>Ankommen, Zimmer beziehen und auf der Terrasse oder im Wintergarten anstoßen.</p>
+        </div>
+      </li>
+      <li>
+        <span class="alt-m">18:00</span>
+        <div>
+          <h3>Hochzeitsessen</h3>
+          <p>Mehrgängiges Menü mit allem, was das Herz begehrt.</p>
+        </div>
+      </li>
+      <li>
+        <span class="alt-m">bis 03:00</span>
+        <div>
+          <h3>Feiern bis in die Nacht</h3>
+          <p>Musik, Tanzen und eine Mitternachtsjause.</p>
+        </div>
+      </li>
+      <li>
+        <span class="alt-m">Sonntag</span>
+        <div>
+          <h3>Frühstück und gemütlicher Abschied</h3>
+          <p>Frühstück bis 11:00 Uhr</p>
+        </div>
+      </li>
+    </ol>
+    <div class="duo" style="margin-top:28px">
+      <figure><img src="assets/img/saal-tafeln.jpg" alt="Festlich gedeckter Saal mit langen weißen Tafeln" width="729" height="470" loading="lazy"></figure>
+      <figure><img src="assets/img/dessertbuffet-abend.jpg" alt="Dessertbuffet am Abend mit Gläsern und Kerzenlicht" width="1100" height="734" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="inner">
+    <p class="label">Der Ort</p>
+    <h2>Hochzeiger Haus, 1.900 Meter über dem Pitztal</h2>
+    <p>Das Hochzeiger Haus ist ein Hotel oberhalb von Jerzens, mit einer Wiese und Bergblick rundherum. Gefeiert wird im Saal und im Wintergarten, bei schönem Wetter auch draußen auf der Terrasse. An dem Wochenende ist das ganze Haus für uns reserviert, es wird keine anderen Gäste geben.</p>
+    <div class="photo"><img src="assets/img/wiese-love-schriftzug.jpg" alt="Almwiese mit LOVE-Schriftzug und Traubogen vor Bergkulisse" width="841" height="315" loading="lazy"></div>
+    <div class="duo">
+      <figure><img src="assets/img/haus-aussen.jpg" alt="Das Hochzeiger Haus von außen, dahinter die Berge" width="1000" height="744" loading="lazy"></figure>
+      <figure><img src="assets/img/herz-liebesschloesser.jpg" alt="Metallherz mit Liebesschlössern auf der Wiese vor dem Bergpanorama" width="1000" height="666" loading="lazy"></figure>
+    </div>
+    <ul class="facts">
+      <li><b>Adresse</b><span>Alm 143, 6474 Jerzens</span></li>
+      <li><b>Zimmer</b><span>Komplett neue Zimmer, vom Einzelzimmer bis zum Familienzimmer, mit insgesamt 94 Schlafplätzen</span></li>
+      <li><b>Wellness</b><span>Almsauna mit finnischer Sauna und Kräutersauna</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band night">
+  <div class="inner">
+    <p class="label">Übernachten</p>
+    <h2>Gleich im Haus übernachten</h2>
+    <p>Die Zimmer sind direkt im Haus. Wer nach dem Feiern nicht mehr fahren will, und die letzten 4 km sind ein Forstweg, geht einfach ein paar Stufen zum Bett. Am Sonntag frühstücken wir dann alle zusammen.</p>
+    <div class="photo"><img src="assets/img/zimmer-balkon.jpg" alt="Helles Zimmer mit Doppelbett, Sofa und Balkon mit Bergblick" width="1100" height="733" loading="lazy"></div>
+    <div class="duo">
+      <figure><img src="assets/img/zimmer-holz.jpg" alt="Zimmer mit Holzmöbeln, Doppelbett und Balkontür" width="1100" height="733" loading="lazy"></figure>
+      <figure><img src="assets/img/zimmer-aussicht.jpg" alt="Blick aus dem Zimmerfenster auf verschneite Berggipfel im Abendlicht" width="800" height="533" loading="lazy"></figure>
+    </div>
+    <ul class="facts">
+      <li><b>Ausstattung</b><span>Eigenes Bad mit Dusche und WC, meist Balkon und TV. Je nach Zimmer 22 bis 38 m².</span></li>
+      <li><b>Pro Nacht</b><span>65 € pro Person im Doppelzimmer, Frühstück inklusive</span></li>
+      <li><b>Einzelzimmer</b><span>40 € Zuschlag pro Nacht</span></li>
+      <li><b>Kinder</b><span>3 bis 10 Jahre 35 €, 11 bis 15 Jahre 45 € pro Nacht</span></li>
+      <li><b>Haustiere</b><span>15 € pro Nacht</span></li>
+      <li><b>Zwei Nächte</b><span>Wer schon am Freitag kommt, bekommt am ersten Abend Halbpension mit Tiroler Bauernbuffet. Aufpreis 30 € pro Person.</span></li>
+    </ul>
+    <p class="small" style="margin-top:14px">Preise laut Hochzeitsmappe 2027. Die Zimmer koordinieren wir.</p>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="inner">
+    <p class="label">Fotos</p>
+    <h2>So schaut es dort oben aus</h2>
+    <div class="gallery">
+      <figure class="tall"><img src="assets/img/galerie-tafel-pampasgras.jpg" alt="Festlich gedeckte Hochzeitstafel mit Pampasgras und Blumen" style="object-position:26% 50%" width="790" height="833" loading="lazy"></figure>
+      <figure><img src="assets/img/galerie-traubogen.jpg" alt="Traubogen auf der Panoramawiese mit Blick in die Berge" style="object-position:40% 50%" width="687" height="440" loading="lazy"></figure>
+      <figure><img src="assets/img/galerie-saal-balken.jpg" alt="Festlich gedeckter Saal mit Holzbalken" width="701" height="315" loading="lazy"></figure>
+      <figure class="wide"><img src="assets/img/galerie-dessertbuffet.jpg" alt="Dessertbuffet mit vielen kleinen Gläsern und Kerzenlicht" width="851" height="315" loading="lazy"></figure>
+      <figure><img src="assets/img/galerie-herbstdeko.jpg" alt="Herbstliche Tischdekoration mit Blumen und Physalis" width="851" height="315" loading="lazy"></figure>
+      <figure><img src="assets/img/galerie-fischgericht.jpg" alt="Angerichtetes Fischgericht mit Risotto aus der Küche des Hauses" width="470" height="315" loading="lazy"></figure>
+      <figure class="wide"><img src="assets/img/galerie-wintergarten.jpg" alt="Wintergarten mit Kamin und Blick in den Abendhimmel" width="1100" height="733" loading="lazy"></figure>
+      <figure class="wide"><img src="assets/img/galerie-stube.jpg" alt="Gemütliche Stube mit Holzbalken und grünen Bänken" width="1100" height="618" loading="lazy"></figure>
+    </div>
+    <p class="small" style="margin-top:14px">Fotos: Hochzeiger Haus. Mehr zur Location auf <a href="https://www.hochzeigerhaus.at/heiraten" target="_blank" rel="noopener">hochzeigerhaus.at</a>.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="inner">
+    <p class="label">Gut zu wissen</p>
+    <h2>Anreise und Kleinigkeiten</h2>
+    <ul class="facts">
+      <li><b>Anreise</b><span>Von Jerzens fahrt ihr mit dem Auto bis zum Haus, die letzten 4 km sind ein Forstweg. Parkplätze sind direkt beim Haus.</span></li>
+      <li><b>Mögliche Zwischen&shy;stopps</b><span>Wer von Osten anreist, kann unterwegs einen Stopp einlegen (mit kleinen Umwegen): Krimmler Wasserfälle, Naturmuseum Hohe Tauern, Swarovski Kristallwelten, Silberbergwerk Schwaz, Alpinecoaster Imst, Haus der Natur Salzburg und mehr.</span></li>
+      <li><b>Kinder</b><span>Kinder sind willkommen. Beim Haus gibt es einen Spielplatz und eine Trampolinanlage.</span></li>
+    </ul>
+    <figure class="karte"><img src="assets/img/karte-fahrzeiten.jpg" alt="Karte von Österreich mit Fahrzeiten zum Hochzeiger Haus: Innsbruck 1 Stunde, München 2,5 Stunden, Zürich 3 Stunden" width="636" height="347" loading="lazy"><figcaption>Fahrzeiten zum Hochzeiger Haus</figcaption></figure>
+    <div class="btns">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hochzeiger+Haus+Alm+143+Jerzens" target="_blank" rel="noopener">Route in Google Maps</a>
+      <a class="btn" href="https://webtv.feratel.com/webtv/?cam=5582&design=v5&c0=0&c2=0&lg=de&s=0" target="_blank" rel="noopener">Live-Webcam vom Berg</a>
+    </div>
+  </div>
+</section>
+
+<footer class="band alt">
+  <div class="inner foot">
+    <figure class="figure"><img src="assets/img/footer-paar-aperitif.jpg" alt="Verena und Christoph lachen sich an, mit einem Glas Aperitif in der Hand" width="688" height="914" loading="lazy"></figure>
+    <p class="label">Bis bald</p>
+    <h2>Wir sehen uns bald</h2>
+    <p>Wir freuen uns darauf, euch die Einladung persönlich zu überreichen. Und wenn ihr euch vorstellen könnt, mit uns im Hochzeiger Haus zu übernachten, freuen wir uns über eine kurze Rückmeldung dazu.</p>
+    <p style="margin-top:20px"><strong>Christoph &amp; Verena</strong></p>
+  </div>
+</footer>
+</body>
+</html>
